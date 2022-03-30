@@ -32,36 +32,19 @@ public class CatsHTTPRequet {
 
         HttpGet request = new HttpGet(
                 "https://raw.githubusercontent.com/netology-code/jd-homeworks/master/http/task1/cats");
-//        request.setHeader(HttpHeaders.ACCEPT, ContentType.APPLICATION_JSON.getMimeType());
 
         CloseableHttpResponse response = httpClient1.execute(request);
 
         System.out.println("*** getCode " + response.getStatusLine().getStatusCode() + " *** \n");
 
-
-//        byte[] body = response.getEntity().getContent().readAllBytes();
-//        for (byte b : body) {
-//            System.out.print((char) b);
-//        }
-//        System.out.println("\n\n ***END***");
-
-//        String body = new String(response.getEntity().getContent().readAllBytes(), StandardCharsets.UTF_8);
-//        System.out.println(body);
-
-
         ObjectMapper mapper = new ObjectMapper();
         List<Cats> cats = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {
         });
-//        System.out.println(cats.get(1).getUser()+" ... "+cats.get(1).getText() +" ... "+cats.get(1).getUpvotes());
-//        cats.forEach(Obj-> System.out.println(Obj.toString()));
-
 
         cats.stream()
                 .filter(kitty -> kitty.getUpvotes() != 0 && kitty.getUpvotes() > 0)
                 .forEach(cat -> System.out.println(cat.getUser() + "  голосов " + cat.getUpvotes()));
 
-
     }
-
 
 }

@@ -15,7 +15,7 @@ public class Cats {
     private String user;
     @JsonProperty("upvotes")
 //    private byte upvotes;
-    private int upvotes;
+    private Integer upvotes;
 
     public String getId() {
         return id;
@@ -50,11 +50,11 @@ public class Cats {
     }
 
 //    public byte getUpvotes() {
-    public int  getUpvotes() {
+    public Integer  getUpvotes() {
         return upvotes;
     }
 
-    public void setUpvotes(byte upvotes) {
+    public void setUpvotes(Integer upvotes) {
         this.upvotes = upvotes;
     }
 

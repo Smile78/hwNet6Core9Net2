@@ -42,7 +42,7 @@ public class CatsHTTPRequet {
         });
 
         cats.stream()
-                .filter(kitty -> kitty.getUpvotes() != 0 && kitty.getUpvotes() > 0)
+                .filter(kitty -> kitty.getUpvotes() != null && kitty.getUpvotes() > 0)
                 .forEach(cat -> System.out.println(cat.getUser() + "  голосов " + cat.getUpvotes()));
 
     }

@@ -1,5 +1,22 @@
-/src/main/java/lection/MainRequestPerson.java
-/src/main/java/lection/
-/src/test/
-/.idea/
 
+target/
+
+
+#/src/main/java/lection/MainRequestPerson.java
+
+/src/main/java/lection/
+
+/src/test/
+
+.idea/
+.git/
+
+*.jpg
+
+*.gitignore
+
+*.xml
+*.iml
+
+/src/main/java/lection/Tets1.java
+Tets1.java
